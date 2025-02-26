@@ -1,39 +1,92 @@
 <!DOCTYPE html>
-<html>
-	
+<html lang="en">
 <head>
-	<title>
-		Creating Search Bar using HTML
-		CSS and Javascript
-	</title>
-	
-	<!-- linking the stylesheet(CSS) -->
-	<link rel="stylesheet" type="text/css" href="./style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabbed Navigation</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        /* Tab styles */
+        .tabs {
+            display: flex;
+            background-color: #333;
+        }
+        .tab {
+            flex: 1;
+            padding: 14px;
+            text-align: center;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .tab:hover {
+            background-color: #555;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            border-top: 2px solid #333;
+        }
+        .active-tab {
+            background-color: #555;
+        }
+        .active-content {
+            display: block;
+        }
+    </style>
 </head>
-
 <body>
-	
-	<!-- input tag -->
-	<input id="searchbar" onkeyup="search_animal()" type="text"
-		name="search" placeholder="Search animals..">
-	
-	<!-- ordered list -->
-	<ol id='list'>
-		<li class="animals">Cat</li>
-		<li class="animals">Dog</li>
-		<li class="animals">Elephant</li>
-		<li class="animals">Fish</li>
-		<li class="animals">Gorilla</li>
-		<li class="animals">Monkey</li>
-		<li class="animals">Turtle</li>
-		<li class="animals">Whale</li>
-		<li class="animals">Aligator</li>
-		<li class="animals">Donkey</li>
-		<li class="animals">Horse</li>
-	</ol>
-	
-	<!-- linking javascript -->
-	<script src="./animals.js"></script>
-</body>
 
+    <!-- Tab Navigation -->
+    <div class="tabs">
+        <div class="tab" onclick="showContent(0)">Tab 1</div>
+        <div class="tab" onclick="showContent(1)">Tab 2</div>
+        <div class="tab" onclick="showContent(2)">Tab 3</div>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="tab-content" id="tab-0">
+        <h2>Tab 1 Content</h2>
+        <p>This is the content for Tab 1.</p>
+    </div>
+    <div class="tab-content" id="tab-1">
+        <h2>Tab 2 Content</h2>
+        <p>This is the content for Tab 2.</p>
+    </div>
+    <div class="tab-content" id="tab-2">
+        <h2>Tab 3 Content</h2>
+        <p>This is the content for Tab 3.</p>
+    </div>
+
+    <!-- JavaScript to switch between tabs -->
+    <script>
+        function showContent(index) {
+            // Hide all content divs
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active-content'));
+
+            // Remove the active class from all tabs
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active-tab'));
+
+            // Show the clicked tab's content and add the active class
+            document.getElementById('tab-' + index).classList.add('active-content');
+            tabs[index].classList.add('active-tab');
+        }
+
+        // Set default active tab
+        document.addEventListener('DOMContentLoaded', () => {
+            showContent(0);
+        });
+    </script>
+
+</body>
 </html>
