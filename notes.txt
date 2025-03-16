@@ -1,0 +1,10 @@
+Different Tabs:
+- Home
+- Mechatronics
+- Computer Aided Engineering
+- Experimentation
+- Autonomous Mobile Robots
+- Design Elements/Mechanical Design
+- Advanced Machining Techniques
+- Capstone Senior Project
+- Contact
