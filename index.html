@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Taaseen's Portfolio</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
+<head>
+    <title>Taaseen's Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
         <h1>Taaseen's Portfolio</h1>
-    
-        <div class="tab">
-            <button class="tablinks" onclick="openLink(event, 'home')" id="defaultOpen">Home</button>
-            <button class="tablinks" onclick="openLink(event, 'mechatronics')">Mechatronics</button>
-            <button class="tablinks" onclick="openLink(event, 'cae')">CAE</button>
-            <button class="tablinks" onclick="openLink(event, 'experimentation')">Experimentation</button>
-            <button class="tablinks" onclick="openLink(event, 'amr')">AMR</button>
-            <button class="tablinks" onclick="openLink(event, 'design')">Design Elements/Mechanical Design</button>\
-            <button class="tablinks" onclick="openLink(event, 'is')">Advanced Manufacturing Techniques</button>
-            <button class="tablinks" onclick="openLink(event, 'capstone')">Capstone Senior Project</button>
-          </div>
-          
-          <div id="home" class="tabcontent"></div>
-          <div id="mechatronics" class="tabcontent"></div>
-          <div id="experimentation" class="tabcontent"></div>
-          <div id="cae" class="tabcontent"></div>
-          <div id="experimentation" class="tabcontent"></div>
-          <div id="amr" class="tabcontent"></div>
-          <div id="design" class="tabcontent"></div>
-          <div id="is" class="tabcontent"></div>
-          <div id="capstone" class="tabcontent"></div>
+    </header>
 
-        <!-- Footer -->
-        <footer>
-            <div class="contact-info">
-                <h3>Contact Info</h3>
-                <p><strong>Phone:</strong> (347) 791-4945</p>
-                <p><strong>Email:</strong> taaseen.jahan@gmail.com</p>
-                <p><strong>LinkedIn: <a href="https://www.linkedin.com/in/taaseenjahan/" target="_blank">https://www.linkedin.com/in/taaseenjahan/</a></p>
-            </div>
-        </footer>
-        
-        <script src="script.js"></script>
-    </body>
+    <nav class="tab">
+        <button class="tablinks" onclick="openLink(event, 'home')" id="defaultOpen">Home</button>
+        <button class="tablinks" onclick="openLink(event, 'mechatronics')">Mechatronics</button>
+        <button class="tablinks" onclick="openLink(event, 'cae')">CAE</button>
+        <button class="tablinks" onclick="openLink(event, 'experimentation')">Experimentation</button>
+        <button class="tablinks" onclick="openLink(event, 'amr')">AMR</button>
+        <button class="tablinks" onclick="openLink(event, 'design')">Design Elements/Mechanical Design</button>
+        <button class="tablinks" onclick="openLink(event, 'is')">Advanced Manufacturing Techniques</button>
+        <button class="tablinks" onclick="openLink(event, 'capstone')">Capstone Senior Project</button>
+    </nav>
+
+    <div class="content">
+        <div id="home" class="tabcontent"></div>
+        <div id="mechatronics" class="tabcontent"></div>
+        <div id="cae" class="tabcontent"></div>
+        <div id="experimentation" class="tabcontent"></div>
+        <div id="amr" class="tabcontent"></div>
+        <div id="design" class="tabcontent"></div>
+        <div id="is" class="tabcontent"></div>
+        <div id="capstone" class="tabcontent"></div>
+    </div>
+
+    <footer>
+        <div class="contact-info">
+            <h3>Contact Info</h3>
+            <p><strong>Phone:</strong> (347) 791-4945</p>
+            <p><strong>Email:</strong> taaseen.jahan@gmail.com</p>
+            <p><strong>LinkedIn: <a href="https://www.linkedin.com/in/taaseenjahan/" target="_blank">Profile</a></strong></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
