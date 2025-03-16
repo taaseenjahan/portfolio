@@ -49,3 +49,21 @@ p {
     from {opacity: 0;}
     to {opacity: 1;}
 }
+footer {
+    background-color: #545353;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+footer p {
+    color:white
+}
+footer h3 {
+    margin-bottom: 10px;
+}
+.contact-info {
+    margin: 20px 0;
+}
+.contact-info p {
+    margin: 5px 0;
+}
