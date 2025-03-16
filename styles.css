@@ -2,8 +2,12 @@ body {
     background-color:rgb(157, 226, 244);
 }
 h1 {
+<<<<<<< HEAD
     background-color: black;
     color:rgb(255, 255, 255);
+=======
+    color:rgb(0, 0, 0);
+>>>>>>> fd10ac42b32663681f2994d12c4c61682dbc7f84
     text-align: center;
 }
 p {
