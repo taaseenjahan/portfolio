@@ -1,92 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testing Tabbed Navigation</title>
-    <style>
-        /* Basic styling */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        /* Tab styles */
-        .tabs {
-            display: flex;
-            background-color: #333;
-        }
-        .tab {
-            flex: 1;
-            padding: 14px;
-            text-align: center;
-            background-color: #333;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .tab:hover {
-            background-color: #555;
-        }
-        .tab-content {
-            display: none;
-            padding: 20px;
-            background-color: white;
-            border-top: 2px solid #333;
-        }
-        .active-tab {
-            background-color: #555;
-        }
-        .active-content {
-            display: block;
-        }
-    </style>
-</head>
-<body>
+    <head>
+        <title>Taaseen's Portfolio</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1>Taaseen's Portfolio</h1>
+    
+        <div class="tab">
+            <button class="tablinks" onclick="openLink(event, 'home')">Home</button>
+            <button class="tablinks" onclick="openLink(event, 'mechatronics')">Mechatronics</button>
+            <button class="tablinks" onclick="openLink(event, 'cae')">CAE</button>
+            <button class="tablinks" onclick="openLink(event, 'experimentation')">Experimentation</button>
+            <button class="tablinks" onclick="openLink(event, 'amr')">AMR</button>
+            <button class="tablinks" onclick="openLink(event, 'design')">Mechanical Design Elements</button>\
+            <button class="tablinks" onclick="openLink(event, 'is')">Advanced Manufacturing Techniques</button>
+            <button class="tablinks" onclick="openLink(event, 'capstone')">Capstone Senior Project</button>
+          </div>
+          
+          <div id="home" class="tabcontent"></div>
+          <div id="mechatronics" class="tabcontent"></div>
+          <div id="experimentation" class="tabcontent"></div>
+          <div id="cae" class="tabcontent"></div>
+          <div id="experimentation" class="tabcontent"></div>
+          <div id="amr" class="tabcontent"></div>
+          <div id="design" class="tabcontent"></div>
+          <div id="is" class="tabcontent"></div>
+          <div id="capstone" class="tabcontent"></div>
 
-    <!-- Tab Navigation -->
-    <div class="tabs">
-        <div class="tab" onclick="showContent(0)">Projects</div>
-        <div class="tab" onclick="showContent(1)">Code</div>
-        <div class="tab" onclick="showContent(2)">Contact</div>
-    </div>
-
-    <!-- Tab Content -->
-    <div class="tab-content" id="tab-0">
-        <h2>Course Projects</h2>
-        <p>Here are all of the projects I completed over the course of my college career.</p>
-    </div>
-    <div class="tab-content" id="tab-1">
-        <h2>Code</h2>
-        <p>Any coding projects/files I created in the past can be found here</p>
-    </div>
-    <div class="tab-content" id="tab-2">
-        <h2>Contact Information</h2>
-        <p>Here are all the ways to reach me including LinkedIn, Phone, and Email.</p>
-    </div>
-
-    <!-- JavaScript to switch between tabs -->
-    <script>
-        function showContent(index) {
-            // Hide all content divs
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => content.classList.remove('active-content'));
-
-            // Remove the active class from all tabs
-            const tabs = document.querySelectorAll('.tab');
-            tabs.forEach(tab => tab.classList.remove('active-tab'));
-
-            // Show the clicked tab's content and add the active class
-            document.getElementById('tab-' + index).classList.add('active-content');
-            tabs[index].classList.add('active-tab');
-        }
-
-        // Set default active tab
-        document.addEventListener('DOMContentLoaded', () => {
-            showContent(0);
-        });
-    </script>
-
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>
