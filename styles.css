@@ -30,9 +30,11 @@ h1 {
 /* Tab Styling */
 .tab {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     background-color: #f1f1f1;
     border: 1px solid #ccc;
+    margin: 0;
 }
 
 .tab button {
@@ -44,8 +46,8 @@ h1 {
     transition: 0.3s;
     font-weight: bold;
     font-size: 1rem;
+    flex: 1 0 30%;
     text-align: center;
-    flex: 1;
 }
 
 .tab button:hover {
@@ -123,11 +125,9 @@ footer h3 {
     margin-top: 20px;
 }
 
-/* ------------------- Mobile Styles ------------------- */
-
-/* Responsive Styles for Mobile Screens */
+/* Responsive Styles */
 @media only screen and (max-width: 768px) {
-    /* Tab Styling: Stack buttons vertically */
+    /* Tab Styling */
     .tab {
         flex-direction: column;
         align-items: center;
@@ -139,7 +139,7 @@ footer h3 {
         font-size: 1.2rem;
     }
 
-    /* Header Styling: Adjust header font size */
+    /* Header Styling */
     header h1 {
         font-size: 1.8rem;
     }
@@ -168,14 +168,12 @@ footer h3 {
     }
 }
 
-/* Further adjustments for very small screens (e.g., mobile phones) */
 @media only screen and (max-width: 480px) {
-    /* Header Styling: Adjust font size */
+    /* Further adjust font sizes for very small screens */
     header h1 {
         font-size: 1.5rem;
     }
 
-    /* Home Section Styling */
     .home h1 {
         font-size: 1.6rem;
     }
