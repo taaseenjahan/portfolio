@@ -1,40 +1,42 @@
-/* General Reset and Box-Sizing */
+/* General reset for margin, padding, and box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body Styling */
 body {
-    font-family: Helvetica, sans-serif;
-    background-color: #fff;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-}
-
-/* Header Styling */
-header {
-    background-color: #fff;
-    color: black;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 20px;
 }
 
 h1 {
-    font-size: 2rem;
-    margin: 0;
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-/* Tab Styling */
+p {
+    color: rgb(0, 0, 0);
+    font-size: 16px; /* Default font size for mobile and smaller screens */
+    margin: 0 15px;
+}
+
 .tab {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    background-color: #f1f1f1;
+    justify-content: center;
+    gap: 10px;
+    overflow: hidden;
     border: 1px solid #ccc;
-    margin: 0;
+    background-color: #f1f1f1;
 }
 
 .tab button {
@@ -45,9 +47,7 @@ h1 {
     padding: 14px 16px;
     transition: 0.3s;
     font-weight: bold;
-    font-size: 1rem;
-    flex: 1 0 30%;
-    text-align: center;
+    font-size: medium;
 }
 
 .tab button:hover {
@@ -58,10 +58,9 @@ h1 {
     background-color: #ccc;
 }
 
-/* Tab Content */
 .tabcontent {
     display: none;
-    padding: 20px;
+    padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
     animation: fadeEffect 1s;
@@ -72,14 +71,12 @@ h1 {
     to { opacity: 1; }
 }
 
-/* Footer Styling */
 footer {
     background-color: #545353;
     color: white;
-    padding: 20px;
+    padding: 38px;
     text-align: center;
     width: 100%;
-    margin-top: auto;
 }
 
 footer p {
@@ -95,98 +92,106 @@ footer h3 {
     margin: 0;
 }
 
-/* Profile Image Styling */
 .profile-image {
     display: block;
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    margin: 40px auto;
+    margin-right: 20px;
     border-radius: 50%;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
 }
 
-/* Content Section Styling */
-.content {
-    padding: 20px;
+.home {
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 70%;
+    margin: 0 auto;
+    text-align: left;
 }
 
-.home, .home h1, .home p {
-    text-align: center;
+/* ----- Desktop & Tablet Styles (Above 768px) ----- */
+
+/* For screens larger than 768px */
+@media screen and (min-width: 768px) {
+    .home {
+        max-width: 60%;
+        width: 100%;
+        text-align: left;
+        justify-content: flex-start;
+    }
+
+    /* Increase the font size of the paragraph on desktop */
+    .home p {
+        font-size: 24px;  /* Adjust for better readability on desktop */
+    }
+
+    /* Increase space between image and text */
+    .profile-image {
+        margin-right: 30px;
+        margin-top: 66px;
+        margin-bottom:66px;
+    }
 }
 
-.home h1 {
-    font-size: 2.5rem;
-}
+/* ----- Mobile Layout (Below 768px) ----- */
 
-.home p {
-    font-size: 1.25rem;
-    text-align: justify;
-    margin-top: 20px;
-}
-
-/* Responsive Styles */
-@media only screen and (max-width: 768px) {
-    /* Tab Styling */
+/* For tablets and smaller screens */
+@media screen and (max-width: 768px) {
     .tab {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
     }
 
     .tab button {
-        flex: 1 0 100%;
+        width: 100%;
         padding: 12px;
-        font-size: 1.2rem;
     }
 
-    /* Header Styling */
-    header h1 {
-        font-size: 1.8rem;
+    /* Adjust the profile image size */
+    .profile-image {
+        width: 200px;
+        height: 200px;
     }
 
-    /* Home Section Styling */
+    .home {
+        flex-direction: column;
+        text-align: center;
+        max-width: 100%;
+    }
+
     .home h1 {
-        font-size: 2rem;
+        font-size: 24px;
     }
 
     .home p {
-        font-size: 1rem;
+        font-size: 16px;
+        margin: 0 15px;
     }
 
-    /* Footer Styling */
     footer {
-        padding: 15px;
-    }
-
-    .contact-info p {
-        font-size: 1rem;
-    }
-
-    /* Profile Image Styling */
-    .profile-image {
-        width: 80%;
+        padding: 20px;
     }
 }
 
-@media only screen and (max-width: 480px) {
-    /* Further adjust font sizes for very small screens */
-    header h1 {
-        font-size: 1.5rem;
-    }
-
+/* For very small screens (smartphones, max-width: 480px) */
+@media screen and (max-width: 480px) {
     .home h1 {
-        font-size: 1.6rem;
+        font-size: 20px;
     }
 
     .home p {
-        font-size: 1rem;
+        font-size: 14px;
+        margin: 0 10px;
     }
 
-    footer {
+    .tab button {
         padding: 10px;
     }
 
-    .contact-info p {
-        font-size: 0.9rem;
+    footer {
+        padding: 15px;
     }
 }
