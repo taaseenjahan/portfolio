@@ -15,6 +15,11 @@ body {
     text-align: center;
 }
 
+.content {
+    flex-grow: 1; /* This will take up available space, pushing footer to the bottom */
+    width: 100%; /* Ensures content takes full width */
+}
+
 h1 {
     background-color: white;
     color: black;
