@@ -35,6 +35,27 @@ p {
     margin: 0 15px;
 }
 
+.download-button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Add margin to space the button from text */
+}
+
+.download-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.download-button:active {
+    background-color: #397d3f; /* Even darker on click */
+}
+
 .tab {
     display: flex;
     justify-content: center;
@@ -100,6 +121,7 @@ footer h3 {
 .profile-image {
     display: block;
     margin-right: 20px;
+    margin-top:25px;
     border-radius: 50%;
     width: 300px;
     height: 300px;
@@ -115,6 +137,14 @@ footer h3 {
     width: 70%;
     margin: 0 auto;
     text-align: left;
+}
+
+.center-div {
+    display: flex;
+    justify-content: center;  /* Centers horizontally */
+    align-items: center;      /* Centers vertically */
+    height: 50px;             /* Set the height of the div */
+    margin-bottom: 15px;
 }
 
 /* ----- Desktop & Tablet Styles (Above 768px) ----- */
@@ -198,5 +228,9 @@ footer h3 {
 
     footer {
         padding: 15px;
+    }
+
+    .center-div {
+        height: 40px; /* Adjust height for smaller screens */
     }
 }
