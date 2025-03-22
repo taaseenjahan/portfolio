@@ -42,3 +42,112 @@ window.onload = function() {
   // Trigger a click on the "Home" tab button
   document.getElementById("defaultOpen").click();
 };
+
+// Log to ensure script is loaded
+console.log("cae-script.js is loaded");
+
+// Function to open nested tabs inside the CAE page (Windmill Design, Turducken Design)
+function openNestedTab(evt, tabName) {
+  console.log("Opening nested tab:", tabName);  // Log which tab is being clicked
+
+  var i, nestedTabcontent, nestedTablinks;
+
+  // Hide all nested tab content
+  nestedTabcontent = document.getElementsByClassName("nested-tabcontent");
+  for (i = 0; i < nestedTabcontent.length; i++) {
+    nestedTabcontent[i].style.display = "none";
+  }
+
+  // Remove the active class from all nested tab buttons
+  nestedTablinks = document.getElementsByClassName("nested-tablinks");
+  for (i = 0; i < nestedTablinks.length; i++) {
+    nestedTablinks[i].className = nestedTablinks[i].className.replace(" active", "");
+  }
+
+  // Display the clicked nested tab content
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+
+  // Dynamically load content for the nested tab
+  loadNestedTabContent(tabName);
+}
+
+// Function to load content for nested tabs (Windmill Design, Turducken Design)
+function loadNestedTabContent(tabName) {
+  var contentUrl = tabName.toLowerCase();  // Get the lowercase tab name (e.g., windmill, turducken)
+  contentUrl = `/portfolio/cae/${contentUrl}/${contentUrl}.html`;  // Path to the external HTML file
+  
+  console.log('Fetching content for:', contentUrl);  // Log the URL being fetched
+
+  // Fetch the content from the external HTML file
+  fetch(contentUrl)
+    .then(response => {
+      // Check if the response is OK (status code 200)
+      if (!response.ok) {
+        throw new Error('Content not found');
+      }
+      return response.text();
+    })
+    .then(data => {
+      // Insert the fetched content into the tab
+      console.log("Fetched content for:", tabName);
+      document.getElementById(tabName).innerHTML = data;
+    })
+    .catch(error => {
+      console.error('Error loading the nested content:', error);
+      // Provide fallback content in case of an error
+      document.getElementById(tabName).innerHTML = "<p>Sorry, we couldn't load the nested content.</p>";
+    });
+}
+
+// Function to load content for nested tabs (Windmill Design, Turducken Design)
+function loadNestedTabContent(tabName) {
+  var contentUrl = tabName.toLowerCase();  // Get the lowercase tab name (e.g., windmill, turducken)
+  contentUrl = `/portfolio/cae/${contentUrl}/${contentUrl}.html`;  // Path to the external HTML file
+  
+  console.log('Fetching content for:', contentUrl);  // Log the URL being fetched
+
+  // Fetch the content from the external HTML file
+  fetch(contentUrl)
+    .then(response => {
+      // Check if the response is OK (status code 200)
+      if (!response.ok) {
+        throw new Error('Content not found');
+      }
+      return response.text();
+    })
+    .then(data => {
+      // Insert the fetched content into the tab
+      console.log("Fetched content for:", tabName);
+      document.getElementById(tabName).innerHTML = data;
+    })
+    .catch(error => {
+      console.error('Error loading the nested content:', error);
+      // Provide fallback content in case of an error
+      document.getElementById(tabName).innerHTML = "<p>Sorry, we couldn't load the nested content.</p>";
+    });
+}
+
+// Function to open a nested tab and display the corresponding content
+function openNestedTab(evt, tabName) {
+  var i, nestedTabcontent, nestedTablinks;
+
+  // Hide all nested tab content
+  nestedTabcontent = document.getElementsByClassName("nested-tabcontent");
+  for (i = 0; i < nestedTabcontent.length; i++) {
+    nestedTabcontent[i].style.display = "none";
+  }
+
+  // Remove the active class from all nested tab buttons
+  nestedTablinks = document.getElementsByClassName("nested-tablinks");
+  for (i = 0; i < nestedTablinks.length; i++) {
+    nestedTablinks[i].className = nestedTablinks[i].className.replace(" active", "");
+  }
+
+  // Display the clicked nested tab content
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+
+  // Dynamically load the content from the external HTML file for the clicked tab
+  loadNestedTabContent(tabName);
+};
