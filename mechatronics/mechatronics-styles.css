@@ -1,6 +1,67 @@
-/* General reset for margin, padding, and box-sizing */
+/* Apply a clean and neutral base */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+  
+  /* Set up the body to center the content */
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4; /* Light background color */
+  }
+  
+  h1 {
+    background-color: #f1f1f1
+  }
+
+  /* Container for the image and text */
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left:100px;
+    padding: 20px;
+    border-radius: 10px; /* Optional rounded corners */
+    max-width: 80%; /* Limit width to prevent it from being too wide */
+  }
+  
+  /* Style for the image */
+  .container img {
+    width: 625px; /* Set image size */
+    height: auto;
+    margin-right: 20px; /* Space between image and text */
+    border-radius: 5px; /* Optional rounded corners on image */
+    background-color: white;
+    border: 5px solid white#7a7a7a; /* White border around the content */
+    box-shadow: 10px 10px 10px rgba(0.5, 0, 0,0.5); /* Optional shadow for a modern look */
+  }
+  
+  /* Style for the text */
+  .container .text {
+    font-family: Arial, sans-serif;
+    color: #333; /* Dark text color */
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 500px; /* Prevent text from overflowing */
+  }
+  
+  /* ----- Desktop & Tablet Styles (Above 768px) ----- */
+
+/* For screens larger than 768px */
+@media screen and (min-width: 768px) {
+
+}
+
+/* ----- Mobile Layout (Below 768px) ----- */
+
+/* For tablets and smaller screens */
+@media screen and (max-width: 768px) {
+}
+
+/* For very small screens (smartphones, max-width: 480px) */
+@media screen and (max-width: 480px) {
 }
