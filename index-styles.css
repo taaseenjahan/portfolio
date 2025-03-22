@@ -38,15 +38,14 @@ p {
 .tab {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    overflow: hidden;
-    border: 1px solid #ccc;
+    gap: 0; /* No gap between tabs */
     background-color: #f1f1f1;
+    /* Removed the border from the tab container */
 }
 
 .tab button {
     background-color: inherit;
-    border: none;
+    border: none; /* Removed borders between buttons */
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
@@ -66,8 +65,8 @@ p {
 .tabcontent {
     display: none;
     padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
+    /* Removed the border from the tab content */
+    border: none; /* No border between tab content */
     animation: fadeEffect 1s;
 }
 

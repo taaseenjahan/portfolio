@@ -1,40 +1,48 @@
 /* General reset for margin, padding, and box-sizing */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Styles for Nested Tabs */
 .nested-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 20px 0;
-  }
-  
-  .nested-tablinks {
-    background-color: inherit;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 10px 12px;
-    transition: 0.3s;
-    font-weight: bold;
-    font-size: medium;
-  }
-  
-  .nested-tablinks:hover {
-    background-color: #ddd;
-  }
-  
-  .nested-tablinks.active {
-    background-color: #ccc;
-  }
-  
-  .nested-tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
-  }
+  display: inline-flex; /* Use inline-flex to make the container only as wide as the tabs */
+  justify-content: center;
+  gap: 0; /* No gap between tabs */
+  margin: 20px 0;
+  border-radius: 50px; /* Rounded edges for pill shape */
+  overflow: hidden; /* Ensure content doesn't overflow */
+  background-color: #f1f1f1; /* Background color for the pill */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional subtle shadow */
+}
+
+.nested-tablinks {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 15px; /* Adjust padding for the content width */
+  transition: 0.3s;
+  font-weight: bold;
+  font-size: medium;
+  border-radius: 50px; /* Ensure each tab has rounded corners */
+  text-transform: uppercase; /* Optional: makes the tab labels look cleaner */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.nested-tablinks:hover {
+  background-color: #ddd;
+}
+
+.nested-tablinks.active {
+  background-color: #007bff; /* Active tab color */
+  color: white; /* Active tab text color */
+}
+
+.nested-tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
