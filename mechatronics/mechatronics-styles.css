@@ -8,7 +8,8 @@
   /* Set up the body to center the content */
   body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     height: 100vh;
     background-color: #f4f4f4; /* Light background color */
